@@ -1,0 +1,11 @@
+C:\Koulu\Tehtävät\Taustajärjestelmät\Citybike\bin\Debug\netcoreapp2.1\Citybike.deps.json
+C:\Koulu\Tehtävät\Taustajärjestelmät\Citybike\bin\Debug\netcoreapp2.1\Citybike.runtimeconfig.json
+C:\Koulu\Tehtävät\Taustajärjestelmät\Citybike\bin\Debug\netcoreapp2.1\Citybike.runtimeconfig.dev.json
+C:\Koulu\Tehtävät\Taustajärjestelmät\Citybike\bin\Debug\netcoreapp2.1\Citybike.dll
+C:\Koulu\Tehtävät\Taustajärjestelmät\Citybike\bin\Debug\netcoreapp2.1\Citybike.pdb
+C:\Koulu\Tehtävät\Taustajärjestelmät\Citybike\obj\Debug\netcoreapp2.1\Citybike.csprojAssemblyReference.cache
+C:\Koulu\Tehtävät\Taustajärjestelmät\Citybike\obj\Debug\netcoreapp2.1\Citybike.csproj.CoreCompileInputs.cache
+C:\Koulu\Tehtävät\Taustajärjestelmät\Citybike\obj\Debug\netcoreapp2.1\Citybike.AssemblyInfoInputs.cache
+C:\Koulu\Tehtävät\Taustajärjestelmät\Citybike\obj\Debug\netcoreapp2.1\Citybike.AssemblyInfo.cs
+C:\Koulu\Tehtävät\Taustajärjestelmät\Citybike\obj\Debug\netcoreapp2.1\Citybike.dll
+C:\Koulu\Tehtävät\Taustajärjestelmät\Citybike\obj\Debug\netcoreapp2.1\Citybike.pdb
