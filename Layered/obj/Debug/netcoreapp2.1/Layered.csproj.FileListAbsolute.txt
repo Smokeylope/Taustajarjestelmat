@@ -1,0 +1,14 @@
+C:\Koulu\Tehtävät\Taustajärjestelmät\Layered\obj\Debug\netcoreapp2.1\Layered.csprojAssemblyReference.cache
+C:\Koulu\Tehtävät\Taustajärjestelmät\Layered\obj\Debug\netcoreapp2.1\Layered.csproj.CoreCompileInputs.cache
+C:\Koulu\Tehtävät\Taustajärjestelmät\Layered\obj\Debug\netcoreapp2.1\Layered.RazorAssemblyInfo.cache
+C:\Koulu\Tehtävät\Taustajärjestelmät\Layered\obj\Debug\netcoreapp2.1\Layered.RazorAssemblyInfo.cs
+C:\Koulu\Tehtävät\Taustajärjestelmät\Layered\obj\Debug\netcoreapp2.1\Layered.AssemblyInfoInputs.cache
+C:\Koulu\Tehtävät\Taustajärjestelmät\Layered\obj\Debug\netcoreapp2.1\Layered.AssemblyInfo.cs
+C:\Koulu\Tehtävät\Taustajärjestelmät\Layered\bin\Debug\netcoreapp2.1\Layered.deps.json
+C:\Koulu\Tehtävät\Taustajärjestelmät\Layered\bin\Debug\netcoreapp2.1\Layered.runtimeconfig.json
+C:\Koulu\Tehtävät\Taustajärjestelmät\Layered\bin\Debug\netcoreapp2.1\Layered.runtimeconfig.dev.json
+C:\Koulu\Tehtävät\Taustajärjestelmät\Layered\bin\Debug\netcoreapp2.1\Layered.dll
+C:\Koulu\Tehtävät\Taustajärjestelmät\Layered\bin\Debug\netcoreapp2.1\Layered.pdb
+C:\Koulu\Tehtävät\Taustajärjestelmät\Layered\obj\Debug\netcoreapp2.1\Layered.RazorTargetAssemblyInfo.cache
+C:\Koulu\Tehtävät\Taustajärjestelmät\Layered\obj\Debug\netcoreapp2.1\Layered.dll
+C:\Koulu\Tehtävät\Taustajärjestelmät\Layered\obj\Debug\netcoreapp2.1\Layered.pdb
