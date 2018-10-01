@@ -4,6 +4,12 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Layered.Controllers
 {
+    public class PlayerQuery
+    {
+        public int minScore { get; set; }
+        public int itemType { get; set; } = -1;
+    }
+
     [Route("api/[controller]")]
     public class PlayersController : Controller
     {
@@ -15,16 +21,39 @@ namespace Layered.Controllers
         }
 
         [HttpGet]
-        [Route("{id}")]
+        [Route("{id:guid}")]
         public Task<Player> Get(Guid id)
         {
             return _processor.Get(id);
         }
 
         [HttpGet]
-        public Task<Player[]> GetAll()
+        [Route("{name:alpha}")]
+        public Task<Player> Get(string name)
         {
+            return _processor.GetPlayerByName(name);
+        }
+
+        [HttpGet]
+        public Task<Player[]> GetAll(PlayerQuery query)
+        {
+            if (query.minScore > 0)
+            {
+                return _processor.GetPlayersByMinScore(query.minScore);
+            }
+            else if (query.itemType >= 0)
+            {
+                return _processor.GetPlayersByItemType((ItemType) query.itemType);
+            }
+
             return _processor.GetAll();
+        }
+
+        [HttpGet]
+        [Route("level")]
+        public Task<int> GetMostCommonPlayerLevel()
+        {
+            return _processor.GetMostCommonPlayerLevel();
         }
 
         [HttpPost]

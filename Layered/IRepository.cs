@@ -18,5 +18,10 @@ namespace Layered
         Task<Item> DeleteItem(Guid playerId, Guid itemId);
 
         Task<int> GetPlayerLevel(Guid playerId);
+
+        Task<Player[]> GetPlayersByMinScore(int score);
+        Task<Player> GetPlayerByName(string name);
+        Task<Player[]> GetPlayersByItemType(ItemType type);
+        Task<int> GetMostCommonPlayerLevel();
     }
 }

@@ -148,5 +148,25 @@ namespace Layered
         {
             return Task.FromResult(Players[playerId].Level);
         }
+
+        public Task<Player[]> GetPlayersByMinScore(int score)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Player> GetPlayerByName(string name)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Player[]> GetPlayersByItemType(ItemType type)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<int> GetMostCommonPlayerLevel()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

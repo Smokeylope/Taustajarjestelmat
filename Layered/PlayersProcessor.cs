@@ -17,9 +17,29 @@ namespace Layered
             return _repository.GetPlayer(id);
         }
 
+        public Task<Player> GetPlayerByName(string name)
+        {
+            return _repository.GetPlayerByName(name);
+        }
+
         public Task<Player[]> GetAll()
         {
             return _repository.GetAllPlayers();
+        }
+
+        public Task<Player[]> GetPlayersByMinScore(int minScore)
+        {
+            return _repository.GetPlayersByMinScore(minScore);
+        }
+
+        public Task<Player[]> GetPlayersByItemType(ItemType type)
+        {
+            return _repository.GetPlayersByItemType(type);
+        }
+
+        public Task<int> GetMostCommonPlayerLevel()
+        {
+            return _repository.GetMostCommonPlayerLevel();
         }
 
         public Task<Player> Create(NewPlayer player)

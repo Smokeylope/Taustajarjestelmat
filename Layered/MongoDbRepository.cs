@@ -126,5 +126,38 @@ namespace Layered
             Player player = await GetPlayer(playerId);
             return player.Level;
         }
+
+        public async Task<Player[]> GetPlayersByMinScore(int score)
+        {
+            FilterDefinition<Player> filter = Builders<Player>.Filter.Gt("Score", score);
+            List<Player> players = await collection.Find(filter).ToListAsync();
+            return players.ToArray();
+        }
+
+        public async Task<Player> GetPlayerByName(string name)
+        {
+            FilterDefinition<Player> filter = Builders<Player>.Filter.Eq("Name", name);
+            Player player = await collection.Find(filter).FirstAsync();
+            return player;
+        }
+
+        public async Task<Player[]> GetPlayersByItemType(ItemType type)
+        {
+            FilterDefinition<Item> itemFilter = Builders<Item>.Filter.Eq("Type", type);
+            FilterDefinition<Player> filter = Builders<Player>.Filter.ElemMatch("Items", itemFilter);
+            List<Player> players = await collection.Find(filter).ToListAsync();
+            return players.ToArray();
+        }
+
+        public async Task<int> GetMostCommonPlayerLevel()
+        {
+            var aggregate = collection.Aggregate()
+                                      .Project(e => new {Level = e.Level})
+                                      .Group(e => e.Level, g => new {Level = g.Key, Count = g.Sum(o=>1)})
+                                      .SortByDescending(e=> e.Count)
+                                      .Limit(3);
+            var result = await aggregate.FirstAsync();
+            return result.Level;
+        }
     }
 }
