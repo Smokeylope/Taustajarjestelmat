@@ -9,6 +9,7 @@ namespace Layered
     {
         private Dictionary<Guid, Player> Players;
         private Dictionary<Guid, Dictionary<Guid, Item>> Items;
+        private List<LogEntry> Log = new List<LogEntry>();
 
         public InMemoryRepository()
         {
@@ -167,6 +168,18 @@ namespace Layered
         public Task<int> GetMostCommonPlayerLevel()
         {
             throw new NotImplementedException();
+        }
+
+        public Task AuditDeleteStarted()
+        {
+            Log.Add(new LogEntry("A request to delete player started at " + DateTime.Now.ToString()));
+            return Task.CompletedTask;
+        }
+
+        public Task AuditDeleteSuccess()
+        {
+            Log.Add(new LogEntry("A request to delete player ended at " + DateTime.Now.ToString()));
+            return Task.CompletedTask;
         }
     }
 }

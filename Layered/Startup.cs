@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Layered.Middleware;
 
 namespace Layered
 {
@@ -30,6 +31,15 @@ namespace Layered
             services.AddTransient<PlayersProcessor>();
             services.AddTransient<ItemsProcessor>();
             services.AddSingleton<IRepository, MongoDbRepository>();
+
+            services.Configure<SecuritySettings>(Configuration.GetSection("SecuritySettings"));
+
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("AdminOnly", policy => policy.RequireClaim("Admin"));
+            });
+
+            services.AddScoped<AuditFilter>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -43,6 +53,8 @@ namespace Layered
             {
                 app.UseHsts();
             }
+
+            app.UseMiddleware<AuthMiddleware>();
 
             app.UseHttpsRedirection();
             app.UseMvc();

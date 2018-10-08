@@ -23,5 +23,8 @@ namespace Layered
         Task<Player> GetPlayerByName(string name);
         Task<Player[]> GetPlayersByItemType(ItemType type);
         Task<int> GetMostCommonPlayerLevel();
+
+        Task AuditDeleteStarted();
+        Task AuditDeleteSuccess();
     }
 }

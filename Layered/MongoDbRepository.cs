@@ -10,6 +10,7 @@ namespace Layered
     public class MongoDbRepository : IRepository
     {
         private readonly IMongoCollection<Player> collection;
+        private readonly IMongoCollection<LogEntry> logCollection;
         private readonly IMongoCollection<BsonDocument> bsonDocumentCollection;
 
         public MongoDbRepository()
@@ -17,6 +18,7 @@ namespace Layered
             var mongoClient = new MongoClient("mongodb://localhost:27017");
             IMongoDatabase database = mongoClient.GetDatabase("game");
             collection = database.GetCollection<Player>("players");
+            logCollection = database.GetCollection<LogEntry>("log");
             bsonDocumentCollection = database.GetCollection<BsonDocument>("players");
         }
 
@@ -158,6 +160,16 @@ namespace Layered
                                       .Limit(3);
             var result = await aggregate.FirstAsync();
             return result.Level;
+        }
+
+        public async Task AuditDeleteStarted()
+        {
+            await logCollection.InsertOneAsync(new LogEntry("A request to delete player started at " + DateTime.Now.ToString()));
+        }
+
+        public async Task AuditDeleteSuccess()
+        {
+            await logCollection.InsertOneAsync(new LogEntry("A request to delete player ended at " + DateTime.Now.ToString()));
         }
     }
 }

@@ -1,6 +1,7 @@
 using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Layered.Controllers
 {
@@ -69,6 +70,8 @@ namespace Layered.Controllers
             return _processor.Modify(id, player);
         }
 
+        [Authorize(Policy = "AdminOnly")]
+        [ServiceFilter(typeof(AuditFilter))]
         [HttpDelete]
         [Route("{id}")]
         public Task<Player> Delete(Guid id)
